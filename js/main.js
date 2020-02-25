@@ -15,7 +15,7 @@ Con difficoltà 0=> tra 1 e 100, con difficoltà 1 =>  tra 1 e 80, con difficolt
 // 2 crearea un ciclo con un prompt per chiedere all'utente il numero
 
 
-// variabile che richiama la funzione generaRandom
+
 
 //ciclo per generare 16 volte un numero random
 var numeriArray = [];
@@ -25,19 +25,42 @@ while (numeriArray.length < 16) { //ciclo while per generare in ogni caso 16 num
     numeriArray.push(numeroRandom);//pusha ancora un numeroRandom in numeri Array
     }
 }
-
-//ciclo for per far chiedere 16 vote un numero
 var numero = [];
-for (var i = 1; i <=16; i++) {
-    numero.push(prompt('Inserisci un numero :'));
-    if (true) {
+console.log(numeriArray);
+
+
+// 2 crearea un ciclo con un prompt per chiedere all'utente il numero in questo coso è 5 per prova,
+//ma va cambiato a 84
+while (numero.length  < 5 && (controllo(numeriArray, numeroUtente)) != true) {
+    var numeroUtente = parseInt(prompt('inserisci un numero'));
+    if (controllo(numeriArray, numeroUtente) == true) {
+        alert('GAME OVER');
+
+    }else if (numero.includes(numeroUtente) == false) {
+        numero.push(numeroUtente);
+
+
+    }else if (numero.includes(numeroUtente) == true) {
+        alert('Hai già inserito questo numero');
+// il numero 5 poi v a cambiato a 84 come sopra
+    }else if (numero.length == 5 ) {
+        alert('Hai vinto');
 
     }
-    //console.log(numero[i]);
-    else if (numero.includes(numeriArray) == false) {
-        console.log('Hai perso GAME OVER ');
+}
 
+
+
+
+// funzione controllo numero vero o falso
+function controllo( listaRandom, num ){
+    var numeroTrovato = false;// variabile sentinella !!!
+    for (var i = 0; i < listaRandom.length; i++) {//ciclo di controllo
+        if (listaRandom[i] == num )  {// condizione se listaRandom uguale a num
+            numeroTrovato == true;
+        }
     }
+    return numeroTrovato;
 }
 
 //funzione per generare numero random
