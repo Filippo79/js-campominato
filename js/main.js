@@ -30,8 +30,11 @@ while (numeriArray.length < 16) { //ciclo while per generare in ogni caso 16 num
 var numero = [];
 for (var i = 1; i <=16; i++) {
     numero.push(prompt('Inserisci un numero :'));
+    if (true) {
+
+    }
     //console.log(numero[i]);
-    if (numero.includes(numeriArray) == false) {
+    else if (numero.includes(numeriArray) == false) {
         console.log('Hai perso GAME OVER ');
 
     }
